@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Posts on reddit require you to prepend 4 spaces to prevent spoilers
 

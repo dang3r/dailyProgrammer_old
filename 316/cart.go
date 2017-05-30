@@ -52,13 +52,10 @@ type rule func(tours map[string]int) float64
 func main() {
 	rules := []rule{
 		func(tours map[string]int) float64 {
-			num := tours["OH"]
-			return float64(num/3) * costs["OH"]
+			return float64(tours["OH"]/3) * costs["OH"]
 		},
 		func(tours map[string]int) float64 {
-			numOH := tours["OH"]
-			numSK := tours["SK"]
-			return math.Min(float64(numSK), float64(numOH)) * costs["SK"]
+			return math.Min(float64(tours["SK"]), float64(tours["OH"])) * costs["SK"]
 		},
 		func(tours map[string]int) float64 {
 			if tours["BC"] > 4 {
